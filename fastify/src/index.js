@@ -3,18 +3,10 @@ const fastify = require("fastify")({
   ignoreTrailingSlash: true,
 });
 
-const blogController = require("../src/controller/blogController");
+const Router = require("../src/routes");
 
 // Routes
-fastify.get("/", (req, reply) => {
-  reply.send("Base url");
-});
-
-fastify.post("/api/blog", blogController.addBlog);
-fastify.get("/api/blogs", blogController.getBlogs);
-fastify.get("/api/blog/:id", blogController.getBlogById);
-fastify.put("/api/blog/:id", blogController.updateBlog);
-fastify.delete("/api/blog/:id", blogController.delateBlogbyId);
+fastify.register(Router);
 
 const PORT = 3333;
 

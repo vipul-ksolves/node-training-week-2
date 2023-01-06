@@ -1,9 +1,8 @@
 //import packages
-const jwt = require("fastify-jwt");
 const fastify = require("fastify")({
   logger: true,
-  ignoreTrailingSlash: true,
 });
+const jwt = require("@fastify/jwt");
 
 /**
  * Works as a body-parser for request body
@@ -23,10 +22,15 @@ fastify.addContentTypeParser(
 );
 
 //import files
+const authRouter = require("../src/router/authRouter");
 const blogRouter = require("./router/blogRouter");
 
 //JWT
 fastify.register(jwt, { secret: "supersecret" });
+
+//Middleware
+const authMiddleware = require("../src/middleware/authMiddleware");
+fastify.register(authMiddleware);
 
 // Routes
 fastify.get("/", (req, reply) => {
@@ -36,6 +40,7 @@ fastify.get("/demo", async (req, reply) => {
   reply.status(200).send("Demo Routes !!");
 });
 fastify.register(blogRouter);
+fastify.register(authRouter);
 
 // Creating server
 const PORT = 3333;

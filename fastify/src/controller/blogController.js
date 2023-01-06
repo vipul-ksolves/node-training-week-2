@@ -3,7 +3,7 @@ const pool = require("../db");
 const addBlog = (req, reply) => {
   const { title, body, publishedat, category, issponsored, image } = req.body;
 
-  //check if same body content already exixt
+  //check if blog already exixt
   pool.query(
     "SELECT s FROM blogs s WHERE s.body = $1",
     [body],

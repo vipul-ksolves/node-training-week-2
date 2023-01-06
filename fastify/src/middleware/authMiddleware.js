@@ -1,7 +1,7 @@
 const fastifyPlugin = require("fastify-plugin");
 
 // Auth middleware decorater
-const authMiddleware = fastifyPlugin(async (fastify) => {
+module.exports = fastifyPlugin(async (fastify) => {
   fastify.decorate("authenticate", async (req, reply) => {
     try {
       await req.jwtVerify();
@@ -10,5 +10,3 @@ const authMiddleware = fastifyPlugin(async (fastify) => {
     }
   });
 });
-
-module.exports = authMiddleware;

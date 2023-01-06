@@ -33,7 +33,7 @@ const authMiddleware = require("../src/middleware/authMiddleware");
 fastify.register(authMiddleware);
 
 // Routes
-fastify.get("/", (req, reply) => {
+fastify.get("/", async (req, reply) => {
   reply.status(200).send("Base url !!");
 });
 fastify.get("/demo", async (req, reply) => {

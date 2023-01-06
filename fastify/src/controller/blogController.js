@@ -1,4 +1,4 @@
-const pool = require("../../db");
+const pool = require("../db");
 
 const addBlog = (req, reply) => {
   const { title, body, publishedat, category, issponsored, image } = req.body;

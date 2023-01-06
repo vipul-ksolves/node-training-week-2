@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "fastify": "^4.11.0",
+    "fastify-jwt": "^4.2.0",
+    "fastify-plugin": "^4.4.0",
     "pg": "^8.8.0"
   },
   "devDependencies": {

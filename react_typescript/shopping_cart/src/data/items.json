@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Book",
+        "price": 7.69,
+        "imgUrl": "https://www.incimages.com/uploaded_files/image/1920x1080/getty_655998316_2000149920009280219_363765.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Compputer",
+        "price": 45.68,
+        "imgUrl": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?cs=srgb&dl=pexels-designecologist-1779487.jpg&fm=jpg"
+    },
+    {
+        "id": 3,
+        "name": "Banana",
+        "price": 2.60,
+        "imgUrl": "https://www.macmillandictionary.com/external/slideshow/thumb/153051_thumb.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Mobile",
+        "price": 9.69,
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd22qKLmrb99zPd9TBAVgWllEzAvMjyj0XmA&usqp=CAU"
+    }
+]

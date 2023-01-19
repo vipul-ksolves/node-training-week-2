@@ -21,7 +21,7 @@ const addBlog = (req, reply) => {
     [title, body, publishedat, category, issponsored, image],
     (err, result) => {
       if (err) throw err;
-      reply.status(201).send("Student Created succesfull !!");
+      reply.status(201).send("Blog Created succesfull !!");
     }
   );
 };
@@ -67,7 +67,7 @@ const updateBlog = (req, reply) => {
         console.log(err);
         throw err;
       }
-      reply.status(200).send("Blod Updated succesfully !!");
+      reply.status(200).send("Blog Updated succesfully !!");
     }
   );
 };

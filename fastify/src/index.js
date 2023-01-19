@@ -3,7 +3,7 @@ const fastify = require("fastify")({
   logger: true,
 });
 const jwt = require("@fastify/jwt");
-
+const cors = require("@fastify/cors");
 /**
  * Works as a body-parser for request body
  */
@@ -28,7 +28,13 @@ const blogRouter = require("./router/blogRouter");
 //JWT
 fastify.register(jwt, { secret: "supersecret" });
 
-//Middleware
+// Middleware
+// await fastify.register(cors());
+
+fastify.register(cors, {
+  origin: "*",
+});
+
 const authMiddleware = require("../src/middleware/authMiddleware");
 fastify.register(authMiddleware);
 
@@ -39,6 +45,7 @@ fastify.get("/", async (req, reply) => {
 fastify.get("/demo", async (req, reply) => {
   reply.status(200).send("Demo Routes !!");
 });
+
 fastify.register(blogRouter);
 fastify.register(authRouter);
 
